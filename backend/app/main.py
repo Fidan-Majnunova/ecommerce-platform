@@ -9,6 +9,8 @@ Base.metadata.create_all(bind=engine)
 app=FastAPI(title="StyleShop API", version="1.0")  #I am creating my backend application
 app.add_middleware(CORSMiddleware,allow_origins=["*"],allow_methods=["*"],allow_headers=["*"])
 
+app.include_router(users.router)
+
 @app.get("/")  #if someone comes to my main backend server with GET request, home() function functions
 def home():
     return {"message": "StyleShop API işləyir!"}
