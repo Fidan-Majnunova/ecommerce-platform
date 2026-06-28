@@ -1,5 +1,9 @@
 from fastapi import FastAPI #FastAPI -nin kitabxanasini istifade edecem, onu cagir
 from fastapi.middleware.cors import CORSMiddleware
+from app.database import engine, Base
+from app.models import user, product, order
+#now below I am creating database tables
+Base.metadata.create_all(bind=engine)
 
 app=FastAPI(title="StyleShop API", version="1.0")  #I am creating my backend application
 app.add_middleware(CORSMiddleware,allow_origins=["*"],allow_methods=["*"],allow_headers=["*"])
@@ -11,3 +15,5 @@ def home():
 @app.get("/health")
 def health():
     return {"status": "ok"}
+
+
