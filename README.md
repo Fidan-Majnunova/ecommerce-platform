@@ -23,7 +23,7 @@ The main challenge to this problem is scalability - what happens when thousands 
 
 ## Structure of the project
 ecommerce-platform/
-│
+
 ├── docs/                        # All documentation
 │   ├── architecture.md          # System design and diagrams
 │   ├── api-spec.md              # Full API reference
