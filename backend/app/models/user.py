@@ -5,9 +5,9 @@ from app.database import Base
 class User(Base):
     __tablename__= "users"
     id=Column(Integer, primary_key=True, index=True)
-    name=Column(String, Nullable=False)
-    email=Column(String,unique=True, Nullable=False)
-    password=Column(String, Nullable=False)
+    name=Column(String, nullable=False)
+    email=Column(String,unique=True, nullable=False)
+    password=Column(String, nullable=False)
     is_admin=Column(Boolean, default=False)
     created_at=Column(DateTime, server_default=func.now())
 
