@@ -2,6 +2,7 @@ from fastapi import FastAPI #FastAPI -nin kitabxanasini istifade edecem, onu cag
 from fastapi.middleware.cors import CORSMiddleware
 from app.database import engine, Base
 from app.models import user, product, order
+from app.routers import users
 #now below I am creating database tables
 Base.metadata.create_all(bind=engine)
 
